@@ -1,5 +1,8 @@
+// vite.config.js
+
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
@@ -10,5 +13,12 @@ export default defineConfig({
             ],
             refresh: true,
         }),
+        vue(),
     ],
+    resolve: {
+        alias: {
+            '@ckeditor/ckeditor5-build-classic': '/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js'
+            , // Replace with the actual path to ckeditor.js
+        },
+    },
 });
